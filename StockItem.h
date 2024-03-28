@@ -6,14 +6,16 @@
 class StockItem {
 private:
     int itemCode;
-    std::string description;
+    
+    std::string description_;
 
 public:
     StockItem(); // default constructor
-    StockItem(int code_num, std::string description); // constructor with parameters
+    StockItem(int num_code, std::string description); // constructor with parameters
 
     std::string get_description();
     int get_item_code();
+    
 
     ~StockItem(); // destructor
 };
