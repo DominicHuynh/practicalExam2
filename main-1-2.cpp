@@ -1,23 +1,30 @@
-#include <iostream>
+
+#include "StockItem.h"
 #include "Store.h"
-
+#include <iostream>
+#include <string>
 int main() {
-    // Create a store with a capacity of 5
-    Store store(5);
+Store Store(9);
+StockItem m1(1002, "Box");
+StockItem m2(2005, "Paper");
+StockItem m3(1000, "Table");
+if (Store.add_Stock(m1)) {
+std::cout << "Added stock 1 to the store" << std::endl;
+} else {
+std::cout << "Could not add stock 1 to the store" << std::endl;
+}
+if (Store.add_Stock(m2)) {
+std::cout << "Added stock 2 to the store" << std::endl;
+} else {
+std::cout << "Could not add stock 2 to the store" << std::endl;
+}
+if (Store.add_Stock(m3)) {
+std::cout << "Added stock 3 to the store" << std::endl;
+} else {
+std::cout << "Could not add stock 3 to the store" << std::endl;
+}
 
-    // Add some stock items
-    StockItem item1(101, "Widget");
-    StockItem item2(102, "Hammer");
-    StockItem item3(101, "Widget");
-
-    // Add items to the store
-    store.add_Stock(item1);
-    store.add_Stock(item2);
-    store.add_Stock(item3);
-
-    // Test the methods
-    std::cout << "Total Stock Count: " << store.get_Total_Stock_Count() << std::endl;
-    std::cout << "Stock Count for Widget (item code 101): " << store.get_Stock_Count(101) << std::endl;
-
-    return 0;
+std::cout << "The store currently has " << Store.get_Stock_Count() << std::endl;
+StockItem* stock = Store.get_Stock_List();
+return 0;
 }
